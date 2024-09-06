@@ -9,11 +9,16 @@ module PairTripleDetector
   input  wire in2,
   output wire out
 );
+  // Nodes in module
+  wire w;
+  wire x;
+  wire y;
 
-  // '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  // Discussion Section Task
-  // '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  // Implement a pair/triple detector using explicit gate-level modeling.
+  // Gates
+  or (w, in0, in1);
+  and(x, in0, in1);
+  and(y, w, in2);
+  or(out, x, y);
 
 endmodule
 
